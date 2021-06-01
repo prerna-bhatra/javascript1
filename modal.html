@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #Modal
+        {
+            display: none;
+            padding: 40px 40px 40px 40px;
+            background-color: white;
+        }
+    </style>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+  
+    
+</head>
+<body>
+    <button onclick="showmodal()" id="showmodalbtn">Show Modal</button>
+    <div id="Modal">
+        <button style="float: right;" id="Close" >Close</button>
+        <div class="modal-content">
+            
+        </div>
+    </div>
+    
+
+    <script>
+        function showmodal()
+        {
+            document.body.style.backgroundColor='gray';
+            var modal=  document.getElementById('Modal')
+            document.getElementById('Modal').style.display='block';
+            var newpara=document.createElement('p')
+            modal.appendChild(newpara)
+            newpara.setAttribute("id","mypara")
+            document.getElementById("mypara").innerHTML+="this is a para added on modal by using js"
+            document.getElementById('showmodalbtn').style.display='none'
+               
+        }   
+        document.getElementById('Close').addEventListener('click',
+        function close()
+        {
+            document.getElementById('Modal').style.display='none';
+            document.body.style.backgroundColor='white';
+            document.getElementById('showmodalbtn').style.display='block'
+        }
+        )
+
+    </script>
+</body>
+</html>
+
+

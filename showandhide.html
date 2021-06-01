@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #leftdiv,#rightdiv
+        {
+            width: 40%;
+            display: inline-block;
+        }
+       #leftdiv
+       {
+           margin-right:50px;
+       }
+           .leftimg,.righimg
+           {
+               cursor: pointer;
+           }    
+           .leftimg:hover , .righimg:hover
+           {
+                background-color: gray;
+           }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span id="lefftright">
+            <div id="leftdiv">
+        
+            </div>
+            <div id="rightdiv">
+            
+            </div>
+        </span>
+       
+    </div>
+    
+    <script>
+        var leftimgsrc='right.png'
+        var rightimgsrc='left.png'
+        ShowdivInLeft()
+        function ShowdivInLeft()
+        {
+            for(let i=0;i<10;i++)
+            {
+                document.getElementById('leftdiv').innerHTML+='<img class="leftimg " width="25%" src='+leftimgsrc+'>'
+            }
+        }
+        ShowdivInRight()
+        function ShowdivInRight()
+        {
+            for(let i=0;i<10;i++)
+            {
+                document.getElementById('rightdiv').innerHTML+='<img class="righimg " width="29%" src='+rightimgsrc+'>'
+            }
+        }
+    </script>
+</body>
+</html>
