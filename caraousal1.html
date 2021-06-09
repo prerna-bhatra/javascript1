@@ -55,12 +55,17 @@
         section::-webkit-scrollbar{
             visibility: hidden;
         }
+        .active
+        {
+            /* opacity: 0.5; */
+            min-width: 400px;
+            height: 400px;
+
+        }
 
        div{
-
-          
-           min-width: 330px;
-           height: 200px;
+           min-width:330px;
+           /* height: 200px; */
            position: relative;
            left: 0;
            text-align: center;
@@ -80,7 +85,7 @@
         <span>&#139</span>
         <span>&#155</span>
         <section>
-         <div>
+         <div class="active">
         1
          </div>
          <div>
@@ -115,8 +120,18 @@
               var l=0;
             span[1].onclick=()=>{
              l++;
+             console.log("L",l);
+             var activeClass=document.getElementsByClassName('active')[0];
+             activeClass.classList.remove('active');
+            //  var newActive=document
+            var newActiveClass=document.getElementsByTagName('div')[(l+(l))];
+            newActiveClass.classList.add('active');
+
+            // console.log("NEW",newActiveClass.innerHTML)
+
              for(let i of div)
              {
+                 
                  if(l==0)
                  {
                      i.style.left="0px";
@@ -148,8 +163,15 @@
 
             span[0].onclick=()=>{
              l--;
+             console.log("L",l);
+               var activeClass=document.getElementsByClassName('active')[0];
+             activeClass.classList.remove('active');
+            //  var newActive=document
+            var newActiveClass=document.getElementsByTagName('div')[(l+(l))];
+            newActiveClass.classList.add('active');
              for(let i of div)
              {
+               
                  if(l==0)
                  {
                      i.style.left="0px";

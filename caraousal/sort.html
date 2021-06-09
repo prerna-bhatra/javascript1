@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var objs = [ 
+    { first_nom: 'Lazslo', last_nom: 'ceo'     },
+    { first_nom: 'Pig',    last_nom: 'eeo'   },
+    { first_nom: 'Pirate', last_nom: 'aao' },
+    { first_nom: 'Pirate', last_nom: 'ppo' },
+    { first_nom: 'Pirate', last_nom: 'bbo' }
+];
+function compare( a, b ) {
+    console.log("Name" ,a.last_nom,b.last_nom)
+  if ( a.last_nom < b.last_nom ){
+      console.log("-1" ,a.last_nom,b.last_nom)
+    return -1;
+  }
+  if ( a.last_nom > b.last_nom ){
+    console.log("1",a.last_nom,b.last_nom)
+    return 1;
+   
+  }
+  console.log("0",a.last_nom,b.last_nom)
+  return 0;
+ 
+}
+objs.sort( compare );
+console.log("AFTER SORT",objs.sort( compare ));
+    </script>
+</body>
+</html>
