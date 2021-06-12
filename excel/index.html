@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/alasql/0.3/alasql.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.12/xlsx.core.min.js"></script>
+</head>
+<body>
+<button onclick="saveFile()">Save XLSX file</button>
+<script>
+    function saveFile () {
+    var data1 = [{a:1,b:10},{a:2,b:20}];
+    var data2 = [{a:100,b:10},{a:200,b:20}];
+    var opts = [{sheetid:'One',header:true},{sheetid:'Two',header:false}];
+    var res = alasql('SELECT INTO XLSX("restest344b.xlsx",?) FROM ?',
+                     [opts,[data1,data2]]);
+}
+</script> 
+</body>
+</html>
+
+
+
+if(data[0].indexOf('Depth (ft)')!=-1)
+{
+ //    console.log("TRUE");
+ let d1=data[0].indexOf('Depth (ft)');
+ // let d2=data[0].indexOf('Depth_Min_Threshold (ft)');
+ // let d3=data[0].indexOf('Depth_Max_Threshold (ft)');
+ // depthData.push({
+ //     'Timestamp':data[i][0],
+ //     'Depth (ft)':data[i][d1],
+ //     'Depth_Min_Threshold (ft)':data[i][d2],
+ //     'Depth_Max_Threshold (ft)':data[i][d3]
+ // })
+
+ // depthData.push({
+ //     'Timestamp':data[i][0],
+ //     'Depth (ft)':data[i][d1],
+ //     'Depth_Min_Threshold (ft)':data[i][d2],
+ //     'Depth_Max_Threshold (ft)':data[i][d3]
+ // })
+
+
+}
+
+
+if(data[0].indexOf('Alkalinity')!=-1)
+{
+ //    console.log("TRUE");
+ let a1=data[0].indexOf('Alkalinity');
+ let a2=data[0].indexOf('Alkalinity_Min_Threshold');
+ let a3=data[0].indexOf('Alkalinity_Max_Threshold');
+
+ AlkalinityData.push({
+     'Timestamp':data[i][0],
+     'Alkalinity':data[i][a1],
+     'Alkalinity_Min_Threshold':data[i][a2],
+     'Alkalinity_Max_Threshold':data[i][a3]
+ })
+}
+
+if(data[0].indexOf('Pressure (Pa)')!=-1)
+{
+ //    console.log("TRUE");
+ let p1=data[0].indexOf('Pressure (Pa)');
+ let p2=data[0].indexOf('Pressure_Min_Threshold (Pa)');
+ let p3=data[0].indexOf('Pressure_Max_Threshold (Pa)');
+
+ pressureData.push({
+     'Timestamp':data[i][0],
+     'Pressure (Pa)':data[i][p1],
+     'Pressure_Min_Threshold (Pa)':data[i][p2],
+     'Pressure_Max_Threshold (Pa)':data[i][p3]
+ })
+
+}
+
+if(data[0].indexOf('ColiformBacteria')!=-1)
+{
+ let l1=data[0].indexOf('ColiformBacteria');
+ let l2=data[0].indexOf('Longitude_Min_Threshold');
+ let l3=data[0].indexOf('Longitude_Max_Threshold');
+ LongitudeData.push({
+     'Timestamp':data[i][0],
+     'Longitude':data[i][l1],
+     'Longitude_Min_Threshold':data[i][l2],
+     'Longitude_Max_Threshold':data[i][l3] 
+ })
+
+}
+
+
+if(data[0].indexOf('Longitude')!=-1)
+{
+ let l1=data[0].indexOf('Longitude');
+ let l2=data[0].indexOf('Longitude_Min_Threshold');
+ let l3=data[0].indexOf('Longitude_Max_Threshold');
+ LongitudeData.push({
+     'Timestamp':data[i][0],
+     'Longitude':data[i][l1],
+     'Longitude_Min_Threshold':data[i][l2],
+     'Longitude_Max_Threshold':data[i][l3] 
+ })
+
+}
